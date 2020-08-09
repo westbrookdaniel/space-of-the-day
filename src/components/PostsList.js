@@ -8,7 +8,7 @@ const PostsList = ({ content }) => {
 					return (
 						<div
 							key={post.id}
-							className="max-w-sm rounded overflow-hidden shadow-lg"
+							className="max-w-sm rounded overflow-hidden shadow-lg bg-white"
 						>
 							<div className="px-6 py-4">
 								<div className="font-bold text-xl mb-2 mt-4">{post.title}</div>

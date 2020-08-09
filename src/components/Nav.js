@@ -5,8 +5,8 @@ const Nav = () => {
 	const [hidden, setHidden] = useState(true)
 
 	return (
-		<nav className="flex items-center justify-between flex-wrap bg-orange-500 p-6">
-			<div className="flex items-center flex-shrink-0 text-white mr-6">
+		<nav className="flex items-center justify-between flex-wrap p-6 shadow-lg bg-white">
+			<div className="flex items-center flex-shrink-0 text-gray-700 mr-6">
 				<Link to="/">
 					<h1 className="font-semibold text-xl tracking-tight">
 						Placeholder CRUD
@@ -18,7 +18,7 @@ const Nav = () => {
 					onClick={() => {
 						setHidden((h) => !h)
 					}}
-					className="flex items-center px-3 py-2 border rounded text-orange-200 border-orange-400 hover:text-white hover:border-white"
+					className="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-400 hover:text-gray-500 hover:border-gray-500"
 				>
 					<svg
 						className="fill-current h-3 w-3"
@@ -38,13 +38,13 @@ const Nav = () => {
 				<div>
 					<Link
 						to="/create"
-						className="block mt-4 lg:inline-block lg:mt-0 text-orange-200 hover:text-white mr-4"
+						className="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-gray-500 mr-4"
 					>
 						Create
 					</Link>
 					<Link
 						to="/about"
-						className="block mt-4 lg:inline-block lg:mt-0 text-orange-200 hover:text-white mr-4"
+						className="block mt-4 lg:inline-block lg:mt-0 text-gray-700 hover:text-gray-500 mr-4"
 					>
 						About
 					</Link>

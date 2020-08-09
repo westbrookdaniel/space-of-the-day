@@ -12,7 +12,7 @@ function App() {
 		<Router>
 			<div className="App">
 				<Nav />
-				<div className="p-6 pt-10 max-w-6xl mx-auto">
+				<div className="p-6 py-12 max-w-6xl mx-auto">
 					<Switch>
 						<Route path="/about">
 							<About />
