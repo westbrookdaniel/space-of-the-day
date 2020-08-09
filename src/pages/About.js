@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const Create = () => {
 	return (
@@ -12,9 +13,17 @@ const Create = () => {
 					read, update, and delete methods on posts.
 				</p>
 				<p className="mb-6">Styling is done using TailwindCSS.</p>
-				<a className="hover:underline text-gray-700" target="_blank" rel="noopener noreferrer" href="https://westbrookdaniel.com/">
+				<motion.a
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{ duration: 0.5, delay: 0.5 }}
+					className="hover:underline text-gray-700"
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://westbrookdaniel.com/"
+				>
 					Made by Daniel Westbrook
-				</a>
+				</motion.a>
 			</div>
 		</div>
 	)
