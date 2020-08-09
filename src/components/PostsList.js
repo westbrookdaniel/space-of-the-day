@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const PostsList = ({ content }) => {
 	const [loading, setLoading] = useState(false)
@@ -26,10 +27,6 @@ const PostsList = ({ content }) => {
 				setLoading(false)
 				classes.remove('opacity-50')
 			})
-	}
-
-	const handleUpdate = (e) => {
-		console.log(e.target.id)
 	}
 
 	return (
@@ -61,13 +58,12 @@ const PostsList = ({ content }) => {
 							>
 								Remove
 							</button>
-							<button
-								id={post.id}
+							<Link
 								className="inline-block bg-gray-500 hover:bg-gray-400 text-white rounded-full px-3 py-1 text-sm font-semibold mr-2"
-								onClick={handleUpdate}
+								to={`/update/${post.id}`}
 							>
 								Update
-							</button>
+							</Link>
 						</div>
 					</div>
 				)

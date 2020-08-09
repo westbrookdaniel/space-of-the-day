@@ -6,6 +6,7 @@ import Nav from './components/Nav'
 import Home from './pages/Home'
 import Create from './pages/Create'
 import About from './pages/About'
+import Update from './pages/Update'
 
 function App() {
 	return (
@@ -19,6 +20,9 @@ function App() {
 						</Route>
 						<Route path="/create">
 							<Create />
+						</Route>
+						<Route path="/update">
+							<Update />
 						</Route>
 						<Route path="/">
 							<Home />
