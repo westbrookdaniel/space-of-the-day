@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import CreateForm from '../components/CreateForm'
 
 const Create = () => {
 
@@ -6,8 +7,8 @@ const Create = () => {
 		<div>
 			<div className='mb-3 flex items-center'>
 				<h2 className="text-3xl font-bold flex-grow">Create Post</h2>
-				{/* <p className="font-bold">Side Content</p> */}
 			</div>
+			<CreateForm />
 		</div>
 	)
 }
