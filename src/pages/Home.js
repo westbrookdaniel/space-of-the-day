@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Pagination from '../components/Pagination'
 import PostsList from '../components/PostsList'
+import PageCounter from '../components/PageCounter'
 
 const Home = () => {
 	const [posts, setPosts] = useState([])
@@ -30,9 +31,11 @@ const Home = () => {
 
 	return (
 		<div>
-			<div className='mb-3 flex items-center'>
+			<div className="mb-3 flex items-center">
 				<h2 className="text-3xl font-bold flex-grow">All Posts</h2>
-				<p className="font-bold">Page {page} of {totalPages}</p>
+				<p className="font-bold">
+					<PageCounter page={page} setPage={setPage} totalPages={totalPages} />
+				</p>
 			</div>
 
 			<PostsList content={content} />
