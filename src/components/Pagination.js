@@ -2,12 +2,6 @@ import React from 'react'
 import PageCounter from './PageCounter'
 
 const Pagination = ({ posts, setPage, page, totalPages }) => {
-	const scrollTop = () => {
-		window.scrollTo({
-			top: 0,
-		})
-	}
-
 	return (
 		<div className="flex space-x-4 py-4 mt-6">
 			<p className="mr-6 font-bold flex-grow">
@@ -18,7 +12,6 @@ const Pagination = ({ posts, setPage, page, totalPages }) => {
 				onClick={() => {
 					if (page !== 1) {
 						setPage((p) => parseInt(p) - 1)
-						scrollTop()
 					}
 				}}
 			>
@@ -31,7 +24,6 @@ const Pagination = ({ posts, setPage, page, totalPages }) => {
 				onClick={() => {
 					if (page !== totalPages) {
 						setPage((p) => parseInt(p) + 1)
-						scrollTop()
 					}
 				}}
 			>

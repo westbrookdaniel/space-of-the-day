@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const PostsList = ({ content }) => {
 	const [loading, setLoading] = useState(false)
@@ -31,9 +32,15 @@ const PostsList = ({ content }) => {
 
 	return (
 		<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+			<AnimatePresence exitBeforeEnter>
 			{content.map((post) => {
+				console.log();
 				return (
-					<div
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						transition={{ duration: 0.3, delay: (post.id - content[0].id) / 20 }}
 						key={post.id}
 						className="max-w-sm rounded overflow-hidden shadow-lg bg-white"
 					>
@@ -65,9 +72,10 @@ const PostsList = ({ content }) => {
 								Update
 							</Link>
 						</div>
-					</div>
+					</motion.div>
 				)
 			})}
+			</AnimatePresence>
 		</div>
 	)
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import './css/output.css'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 import AnimatedSwitch from './AnimatedSwitch'
 import Nav from './components/Nav'
@@ -13,7 +14,13 @@ function App() {
 	return (
 		<Router>
 			<div className="App">
-				<Nav />
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{ delay: 0.75, duration: 0.5 }}
+				>
+					<Nav />
+				</motion.div>
 				<div className="p-6 py-12 max-w-6xl mx-auto">
 					<AnimatedSwitch>
 						<Route exact path="/" component={Home} />
