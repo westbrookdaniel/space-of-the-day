@@ -1,10 +1,48 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Pagination from '../components/Pagination'
 import PostsList from '../components/PostsList'
 
 const Home = () => {
+	const [posts, setPosts] = useState([])
+	const [page, setPage] = useState(1)
+	const [content, setContent] = useState([])
+
+	useEffect(() => {
+		fetch('https://jsonplaceholder.typicode.com/posts')
+			.then((res) => res.json())
+			.then((res) => {
+				setPosts(res)
+			})
+			.catch((err) => {
+				console.log(err)
+			})
+	}, [])
+
+	useEffect(() => {
+		let start = page * 9 - 9
+
+		if (posts.length > 9) {
+			setContent(posts.slice(start, start + 9))
+		}
+	}, [posts, page])
+
+	let totalPages = Math.ceil(posts.length / 9)
+
 	return (
 		<div>
-			<PostsList />
+			<div className='mb-3 flex items-center'>
+				<h2 className="text-3xl font-bold flex-grow">All Posts</h2>
+				<p className="font-bold">Page {page} of {totalPages}</p>
+			</div>
+
+			<PostsList content={content} />
+
+			<Pagination
+				posts={posts}
+				setPage={setPage}
+				page={page}
+				totalPages={totalPages}
+			/>
 		</div>
 	)
 }

@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Nav from './components/Nav'
 import Home from './pages/Home'
+import Create from './pages/Create'
+import About from './pages/About'
 
 function App() {
 	return (
@@ -13,10 +15,10 @@ function App() {
 				<div className="p-6 pt-10 max-w-6xl mx-auto">
 					<Switch>
 						<Route path="/about">
-							<h1>About Page</h1>
+							<About />
 						</Route>
 						<Route path="/create">
-							<h1>Create Page</h1>
+							<Create />
 						</Route>
 						<Route path="/">
 							<Home />
