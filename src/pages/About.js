@@ -1,12 +1,20 @@
 import React from 'react'
 
 const Create = () => {
-
 	return (
 		<div>
-			<div className='mb-3 flex items-center'>
+			<div className="mb-3 flex items-center">
 				<h2 className="text-3xl font-bold flex-grow">About</h2>
-				{/* <p className="font-bold">Side Content</p> */}
+			</div>
+			<div className="max-w-lg">
+				<p className="mb-3">
+					This React app is made using the JSONPlaceholder API, and uses create,
+					read, update, and delete methods on posts.
+				</p>
+				<p className="mb-6">Styling is done using TailwindCSS.</p>
+				<a className="hover:underline text-gray-700" target="_blank" rel="noopener noreferrer" href="https://westbrookdaniel.com/">
+					Made by Daniel Westbrook
+				</a>
 			</div>
 		</div>
 	)
