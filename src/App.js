@@ -10,6 +10,26 @@ import Create from './pages/Create'
 import About from './pages/About'
 import Update from './pages/Update'
 
+/*
+
+More appealing
+Astronomy Picture of the Day
+----
+Shows all legacy pictures in gallery with thumbnails
+Download Links too
+Endpoint Examples: 
+https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2020-08-17
+https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&count=10
+----
+TODO: Improve card layout for information (Date, Image, Title, Author)
+TODO: Add a details page for explination and larger image
+TODO: Download for the image using HD version
+TODO: Search by date
+TODO: Rebrand and ReName
+
+*/
+
+
 function App() {
 	return (
 		<Router>
