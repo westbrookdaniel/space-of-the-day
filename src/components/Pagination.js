@@ -8,7 +8,7 @@ const Pagination = ({ posts, setPage, page, totalPages }) => {
 				<PageCounter page={page} setPage={setPage} totalPages={totalPages} />
 			</p>
 			<button
-				className={`hover:underline ${page === 1 ? 'text-gray-600' : null}`}
+				className={`hover:underline ${page === 1 ? 'text-black' : null}`}
 				onClick={() => {
 					if (page !== 1) {
 						setPage((p) => parseInt(p) - 1)
@@ -19,7 +19,7 @@ const Pagination = ({ posts, setPage, page, totalPages }) => {
 			</button>
 			<button
 				className={`hover:underline ${
-					page === totalPages ? 'text-gray-600' : null
+					page === totalPages ? 'text-black' : null
 				}`}
 				onClick={() => {
 					if (page !== totalPages) {

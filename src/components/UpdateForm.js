@@ -68,11 +68,11 @@ const UpdateForm = ({ postId }) => {
 	return (
 		<form className="w-full max-w-sm" onSubmit={handleSubmit}>
 			<div className="mb-6">
-				<label className="block text-gray-500 font-bold md:mb-0 pr-4">
+				<label className="block text-black font-bold md:mb-0 pr-4">
 					Title
 				</label>
 				<input
-					className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+					className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-black leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
 					type="text"
 					placeholder="Interesting Title"
 					onChange={handleChange}
@@ -81,11 +81,11 @@ const UpdateForm = ({ postId }) => {
 				/>
 			</div>
 			<div className="mb-6">
-				<label className="block text-gray-500 font-bold md:mb-0 pr-4">
+				<label className="block text-black font-bold md:mb-0 pr-4">
 					User ID
 				</label>
 				<input
-					className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+					className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-black leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
 					type="number"
 					placeholder="0"
 					onChange={handleChange}
@@ -94,11 +94,11 @@ const UpdateForm = ({ postId }) => {
 				/>
 			</div>
 			<div className="mb-6">
-				<label className="block text-gray-500 font-bold md:mb-0 pr-4">
+				<label className="block text-black font-bold md:mb-0 pr-4">
 					Description
 				</label>
 				<textarea
-					className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+					className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-black leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
 					placeholder="Your Post Description"
 					onChange={handleChange}
 					value={form.body}
@@ -113,7 +113,7 @@ const UpdateForm = ({ postId }) => {
 					Update
 				</button>
 				<Link
-					className="hover:text-gray-500 focus:shadow-outline focus:outline-none text-gray-600 font-bold ml-6"
+					className="hover:text-black focus:shadow-outline focus:outline-none text-black font-bold ml-6"
 					to="/"
 				>
 					Back

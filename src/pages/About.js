@@ -17,7 +17,7 @@ const Create = () => {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 0.5, delay: 0.5 }}
-					className="hover:underline text-gray-700"
+					className="hover:underline text-black"
 					target="_blank"
 					rel="noopener noreferrer"
 					href="https://westbrookdaniel.com/"

@@ -17,15 +17,19 @@ Astronomy Picture of the Day
 ----
 Shows all legacy pictures in gallery with thumbnails
 Download Links too
+https://apod.nasa.gov/apod/astropix.html
 Endpoint Examples: 
 https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2020-08-17
 https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&count=10
 ----
+TODO: Apply Branding
+TODO: Write About Page
+TODO: Setup api and caching
 TODO: Improve card layout for information (Date, Image, Title, Author)
 TODO: Add a details page for explination and larger image
-TODO: Download for the image using HD version
-TODO: Search by date
-TODO: Rebrand and ReName
+TODO: Add Search (at least by date)
+----
+Only Read, as CRUD will be illsutrated in IPD Project
 
 */
 
@@ -33,7 +37,7 @@ TODO: Rebrand and ReName
 function App() {
 	return (
 		<Router>
-			<div className="App">
+			<div className="App font-body">
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}

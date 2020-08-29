@@ -42,17 +42,17 @@ const PostsList = ({ content }) => {
 						exit={{ opacity: 0 }}
 						transition={{ duration: 0.3, delay: (post.id - content[0].id) / 20 }}
 						key={post.id}
-						className="max-w-sm rounded overflow-hidden shadow-lg bg-white"
+						className="max-w-sm rounded overflow-hidden shadow-md bg-white"
 					>
 						<div className="px-6 py-4">
 							<div className="font-bold text-xl mb-2 mt-4">{post.title}</div>
-							<p className="text-gray-700 text-base">{post.body}</p>
+							<p className="text-black text-base">{post.body}</p>
 						</div>
 						<div className="px-6 pb-4">
-							<span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+							<span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-black mr-2">
 								ID: {post.id}
 							</span>
-							<span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+							<span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-black mr-2">
 								User ID: {post.userId}
 							</span>
 						</div>

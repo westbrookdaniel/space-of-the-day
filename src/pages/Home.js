@@ -32,7 +32,7 @@ const Home = () => {
 	return (
 		<div>
 			<div className="mb-3 flex items-center">
-				<h2 className="text-3xl font-bold flex-grow">All Posts</h2>
+				<h2 className="text-3xl font-bold flex-grow font-display">All Posts</h2>
 				<p className="font-bold">
 					<PageCounter page={page} setPage={setPage} totalPages={totalPages} />
 				</p>

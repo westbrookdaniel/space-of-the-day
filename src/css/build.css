@@ -1,3 +1,22 @@
+:root {
+	--color-primary: #C0FF31;
+}
+
 @tailwind base;
+
+@font-face {
+	font-family: 'Epilogue';
+	font-weizght: normal;
+	font-style: normal;
+	src: url(/fonts/Epilogue-VariableFont_wght.woff2) format('woff2-variations');
+}
+@font-face {
+	font-family: 'Playfair Display';
+	font-weight: normal;
+	font-style: normal;
+	src: url(/fonts/PlayfairDisplay-VariableFont_wght.woff2)
+		format('woff2-variations');
+}
+
 @tailwind components;
 @tailwind utilities;
