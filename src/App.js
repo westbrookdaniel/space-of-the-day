@@ -6,9 +6,7 @@ import { motion } from 'framer-motion'
 import AnimatedSwitch from './AnimatedSwitch'
 import Nav from './components/Nav'
 import Home from './pages/Home'
-import Create from './pages/Create'
 import About from './pages/About'
-import Update from './pages/Update'
 
 /*
 
@@ -49,8 +47,6 @@ function App() {
 					<AnimatedSwitch>
 						<Route exact path="/" component={Home} />
 						<Route path="/about" component={About} />
-						<Route path="/create" component={Create} />
-						<Route path="/update" component={Update} />
 					</AnimatedSwitch>
 				</div>
 			</div>

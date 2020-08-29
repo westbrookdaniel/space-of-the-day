@@ -2,32 +2,33 @@ import React, { useEffect, useState } from 'react'
 import Pagination from '../components/Pagination'
 import PostsList from '../components/PostsList'
 import PageCounter from '../components/PageCounter'
+import api from '../api'
 
 const Home = () => {
-	const [posts, setPosts] = useState([])
 	const [page, setPage] = useState(1)
 	const [content, setContent] = useState([])
+	const [days, setDays] = useState()
+	const [totalPages, setTotalPages] = useState(0)
 
 	useEffect(() => {
-		fetch('https://jsonplaceholder.typicode.com/posts')
-			.then((res) => res.json())
-			.then((res) => {
-				setPosts(res)
-			})
-			.catch((err) => {
-				console.log(err)
-			})
+		api.getMonth().then((res) => setDays(res))
 	}, [])
+
+	useEffect(() => {
+		console.log(days)
+	}, [days])
 
 	useEffect(() => {
 		let start = page * 9 - 9
 
-		if (posts.length > 9) {
-			setContent(posts.slice(start, start + 9))
+		if (days) {
+			if (days.length > 9) {
+				setContent(days.slice(start, start + 9))
+			}
+			
+			setTotalPages(Math.ceil(days.length / 9))
 		}
-	}, [posts, page])
-
-	let totalPages = Math.ceil(posts.length / 9)
+	}, [days, page])
 
 	return (
 		<div>
@@ -40,12 +41,7 @@ const Home = () => {
 
 			<PostsList content={content} />
 
-			<Pagination
-				posts={posts}
-				setPage={setPage}
-				page={page}
-				totalPages={totalPages}
-			/>
+			<Pagination setPage={setPage} page={page} totalPages={totalPages} />
 		</div>
 	)
 }

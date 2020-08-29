@@ -1,7 +1,7 @@
 import React from 'react'
 import PageCounter from './PageCounter'
 
-const Pagination = ({ posts, setPage, page, totalPages }) => {
+const Pagination = ({ setPage, page, totalPages }) => {
 	return (
 		<div className="flex space-x-4 py-4 mt-6">
 			<p className="mr-6 font-bold flex-grow">
