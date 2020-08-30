@@ -31,24 +31,14 @@ Only Read, as CRUD will be illsutrated in IPD Project
 
 */
 
-
 function App() {
 	return (
 		<Router>
 			<div className="App font-body">
-				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ delay: 0.75, duration: 0.5 }}
-				>
-					<Nav />
-				</motion.div>
-				<div className="p-6 py-12 max-w-6xl mx-auto">
 					<AnimatedSwitch>
 						<Route exact path="/" component={Home} />
 						<Route path="/about" component={About} />
 					</AnimatedSwitch>
-				</div>
 			</div>
 		</Router>
 	)

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 const Create = () => {
 	return (
-		<div>
+		<div className="p-6 py-12 max-w-6xl mx-auto pt-64">
 			<div className="mb-3 flex items-center">
 				<h2 className="text-3xl font-bold flex-grow">About</h2>
 			</div>

@@ -1,21 +1,20 @@
 import React from 'react'
 import { Switch, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import Nav from './components/Nav'
 
 const AnimatedSwitch = ({ children }) => {
 	const location = useLocation()
+	console.log(location.pathname)
 	return (
 		<AnimatePresence exitBeforeEnter>
-			<motion.div
-				initial={{ opacity: 0, translateY: '100px'}}
-				animate={{ opacity: 1, translateY: '0px' }}
-				exit={{ opacity: 0, translateY: '100px' }}
-                key={location.pathname}
-                transition={{ duration: 0.3, ease: 'backOut' }}
-			>
-				<Switch key={location.pathname} location={location}>
-					{children}
-				</Switch>
+			<motion.div key={location.pathname}>
+				<Nav />
+				<motion.div
+					transition={{ delay: 0.7 }}
+				>
+					<Switch location={location}>{children}</Switch>
+				</motion.div>
 			</motion.div>
 		</AnimatePresence>
 	)
