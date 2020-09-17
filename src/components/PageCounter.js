@@ -9,7 +9,6 @@ const PageCounter = ({ setPage, page, totalPages }) => {
 				type="number"
 				value={page}
 				onChange={(e) => {
-                    console.log(e.target.value);
                     if (!((e.target.value < 1)| (e.target.value > totalPages)) | e.target.value === '') {
                         setPage(e.target.value)
                     }
