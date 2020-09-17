@@ -6,6 +6,7 @@ import api from '../api'
 import useLocalStorage from '../util/useLocalStorage'
 
 const Home = () => {
+	const [loading, setLoading] = useState(true)
 	const [page, setPage] = useState(1)
 	const [content, setContent] = useState([])
 	const [days, setDays] = useState()
@@ -14,10 +15,6 @@ const Home = () => {
 	useEffect(() => {
 		api.getMonth().then((res) => setDays(res))
 	}, [])
-
-	// useEffect(() => {
-	// 	console.log(days)
-	// }, [days])
 
 	useEffect(() => {
 		let start = page * 9 - 9
@@ -34,10 +31,21 @@ const Home = () => {
 	return (
 		<div>
 			<div
-				className={`h-screen bg-cover ${days && 'd-grid'}`}
-				style={{ backgroundImage: `url("${days ? days[0]?.url : null}")` }}
+				className={`h-screen bg-cover`}
+				// style={{ backgroundImage: `url("${days ? days[0]?.url : null}")` }}
 			>
-				{days ? null : (
+				<img
+					className={`${
+						loading ? 'opacity-0 absolute' : 'opacity-1'
+					} transition-opacity ease-in-out duration-200 w-full h-full object-cover`}
+					onLoad={() => {
+						setLoading(false)
+					}}
+					src={days && days[0]?.url}
+					alt={days ? days[0]?.title : 'Loading'}
+				/>
+
+				{!days && loading ? (
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 20 20"
@@ -46,7 +54,7 @@ const Home = () => {
 					>
 						<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
 					</svg>
-				)}
+				) : null}
 			</div>
 			{days ? (
 				<div className="p-6 py-12 max-w-6xl mx-auto">
