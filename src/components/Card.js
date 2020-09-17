@@ -5,7 +5,7 @@ export default function Card({ day }) {
 	const [loading, setLoading] = useState(true)
 
 	return (
-		<div className="max-w-sm overflow-hidden shadow-md flex py-4 flex-col">
+		<div className="max-w-sm overflow-hidden shadow-md h-full flex py-4 flex-col">
 			<div className="relative">
 				<span className="absolute top-0 right-0 bg-black px-3 py-2 text-sm font-semibold">
 					{day.date}
