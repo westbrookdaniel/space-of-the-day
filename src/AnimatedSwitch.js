@@ -5,12 +5,12 @@ import Nav from './components/Nav'
 
 const AnimatedSwitch = ({ children }) => {
 	const location = useLocation()
-	console.log(location.pathname)
+
 	return (
 		<AnimatePresence exitBeforeEnter>
 			<motion.div key={location.pathname}>
 				<motion.div
-					className="absolute h-screen w-screen top-0 left-0 right-0 bottom-0 bg-primary"
+					className="absolute h-screen w-screen z-20 top-0 left-0 right-0 bottom-0 bg-primary-500"
 					initial={{
 						opacity: 1,
 						transition: { duration: 0.2, ease: 'easeInOut' },

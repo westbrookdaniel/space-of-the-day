@@ -5,7 +5,7 @@ const PageCounter = ({ setPage, page, totalPages }) => {
 		<>
 			Page{' '}
 			<input
-				className="font-bold border border-gray-400 rounded px-1 w-12"
+				className="font-bold border border-gray-800 bg-black rounded px-1 w-12"
 				type="number"
 				value={page}
 				onChange={(e) => {

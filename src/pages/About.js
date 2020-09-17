@@ -16,8 +16,8 @@ const Create = () => {
 				<motion.a
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
-					transition={{ duration: 0.5, delay: 0.5 }}
-					className="hover:underline text-black"
+					transition={{ duration: 0.5, delay: 1 }}
+					className="hover:underline"
 					target="_blank"
 					rel="noopener noreferrer"
 					href="https://westbrookdaniel.com/"

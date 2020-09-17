@@ -8,16 +8,16 @@ import useLocalStorage from '../util/useLocalStorage'
 const Home = () => {
 	const [page, setPage] = useState(1)
 	const [content, setContent] = useState([])
-	const [days, setDays] = useLocalStorage()
+	const [days, setDays] = useState()
 	const [totalPages, setTotalPages] = useState(0)
 
 	useEffect(() => {
 		api.getMonth().then((res) => setDays(res))
-	}, [setDays])
+	}, [])
 
-	useEffect(() => {
-		console.log(days)
-	}, [days])
+	// useEffect(() => {
+	// 	console.log(days)
+	// }, [days])
 
 	useEffect(() => {
 		let start = page * 9 - 9
@@ -48,24 +48,26 @@ const Home = () => {
 					</svg>
 				)}
 			</div>
-			<div className="p-6 py-12 max-w-6xl mx-auto">
-				<div className="mb-3 flex items-center">
-					<h2 className="text-3xl font-bold flex-grow font-body">
-						Previous Photos
-					</h2>
-					<p className="font-bold">
-						<PageCounter
-							page={page}
-							setPage={setPage}
-							totalPages={totalPages}
-						/>
-					</p>
+			{days ? (
+				<div className="p-6 py-12 max-w-6xl mx-auto">
+					<div className="mb-3 flex items-center">
+						<h2 className="text-3xl font-bold flex-grow font-body">
+							Previous Photos
+						</h2>
+						<p className="font-bold">
+							<PageCounter
+								page={page}
+								setPage={setPage}
+								totalPages={totalPages}
+							/>
+						</p>
+					</div>
+
+					<PostsList content={content} />
+
+					<Pagination setPage={setPage} page={page} totalPages={totalPages} />
 				</div>
-
-				<PostsList content={content} />
-
-				<Pagination setPage={setPage} page={page} totalPages={totalPages} />
-			</div>
+			) : null}
 		</div>
 	)
 }

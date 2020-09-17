@@ -1,7 +1,3 @@
-:root {
-	--color-primary: #C0FF31;
-}
-
 @tailwind base;
 
 @font-face {
@@ -20,3 +16,7 @@
 
 @tailwind components;
 @tailwind utilities;
+
+html {
+	@apply bg-black
+}

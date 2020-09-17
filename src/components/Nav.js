@@ -4,7 +4,7 @@ import { GrFormSearch } from 'react-icons/gr'
 
 const Nav = () => {
 	return (
-		<header className="fixed w-full z-50 bg-primary">
+		<header className="absolute w-full z-50 bg-primary-500">
 			<nav className="flex items-center justify-between px-12 m-auto flex-wrap">
 				<Link
 					to="/about"

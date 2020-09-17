@@ -34,7 +34,7 @@ Only Read, as CRUD will be illsutrated in IPD Project
 function App() {
 	return (
 		<Router>
-			<div className="App font-body">
+			<div className="font-body text-white">
 					<AnimatedSwitch>
 						<Route exact path="/" component={Home} />
 						<Route path="/about" component={About} />
