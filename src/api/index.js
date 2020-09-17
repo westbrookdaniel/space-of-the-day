@@ -5,7 +5,7 @@ export default {
 	getMonth: async (month = date.getMonth() + 1) => {
 		try {
 			const data = await fetch(
-				`https://api.nasa.gov/planetary/apod?api_key=${key}&start_date=${date.getFullYear()}-${month - 1}-${date.getDate()}&thumbs=true`
+				`https://api.nasa.gov/planetary/apod?api_key=${key}&start_date=${date.getFullYear()}-${month - 1}-${date.getDate()}`
 			)
 			const json = await data.json()
 			return json

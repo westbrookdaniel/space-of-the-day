@@ -13,7 +13,7 @@ const Home = () => {
 
 	useEffect(() => {
 		api.getMonth().then((res) => setDays(res))
-	}, [])
+	}, [setDays])
 
 	useEffect(() => {
 		console.log(days)
@@ -34,9 +34,19 @@ const Home = () => {
 	return (
 		<div>
 			<div
-				className="h-screen bg-cover"
-				style={{ backgroundImage: `url("${days ? days[0].url : null}")` }}
+				className={`h-screen bg-cover ${days && 'd-grid'}`}
+				style={{ backgroundImage: `url("${days ? days[0]?.url : null}")` }}
 			>
+				{days ? null : (
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 20 20"
+						fill="currentColor"
+						className="animate-spin w-10 m-auto h-screen"
+					>
+						<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+					</svg>
+				)}
 			</div>
 			<div className="p-6 py-12 max-w-6xl mx-auto">
 				<div className="mb-3 flex items-center">

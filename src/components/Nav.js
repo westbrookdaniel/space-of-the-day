@@ -1,16 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { GrFormSearch } from 'react-icons/gr'
-import { motion } from 'framer-motion'
 
 const Nav = () => {
 	return (
-		<motion.header
-			className="fixed w-full z-50 bg-primary"
-			initial={{ height: '100vh', transition: { duration: 0.7, ease: "easeInOut" } }}
-			animate={{ height: 'auto', transition: { delay: 0.3, duration: 0.7, ease: "easeInOut" } }}
-			exit={{ height: '100vh', transition: { duration: 0.7, ease: "easeInOut" } }}
-		>
+		<header className="fixed w-full z-50 bg-primary">
 			<nav className="flex items-center justify-between px-12 m-auto flex-wrap">
 				<Link
 					to="/about"
@@ -30,7 +24,7 @@ const Nav = () => {
 					<GrFormSearch title="search" size="2em" />
 				</Link>
 			</nav>
-		</motion.header>
+		</header>
 	)
 }
 
