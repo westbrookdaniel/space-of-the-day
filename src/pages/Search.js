@@ -3,8 +3,7 @@ import Pagination from '../components/Pagination'
 import PostsList from '../components/PostsList'
 import PageCounter from '../components/PageCounter'
 
-const Home = ({ days }) => {
-	const [loading, setLoading] = useState(true)
+const Search = ({ days }) => {
 	const [page, setPage] = useState(1)
 	const [content, setContent] = useState([])
 	const [totalPages, setTotalPages] = useState(0)
@@ -21,38 +20,12 @@ const Home = ({ days }) => {
 	}, [days, page])
 
 	return (
-		<div>
-			<div
-				className={`h-screen bg-cover`}
-				// style={{ backgroundImage: `url("${days ? days[0]?.url : null}")` }}
-			>
-				<img
-					className={`${
-						loading ? 'opacity-0 absolute' : 'opacity-1'
-					} transition-opacity ease-in-out duration-200 w-full h-full object-cover`}
-					onLoad={() => {
-						setLoading(false)
-					}}
-					src={days && days[0]?.url}
-					alt={days ? days[0]?.title : 'Loading'}
-				/>
-
-				{!days && loading ? (
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 20 20"
-						fill="currentColor"
-						className="animate-spin w-10 m-auto h-screen"
-					>
-						<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-					</svg>
-				) : null}
-			</div>
+		<div className="pt-32">
 			{days ? (
 				<div className="p-6 py-12 max-w-6xl mx-auto">
 					<div className="mb-3 flex items-center">
 						<h2 className="text-3xl font-bold flex-grow font-body">
-							This Months Images
+							Search
 						</h2>
 						<p className="font-bold">
 							<PageCounter
@@ -72,4 +45,4 @@ const Home = ({ days }) => {
 	)
 }
 
-export default Home
+export default Search

@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { GrFormSearch } from 'react-icons/gr'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useHistory } from "react-router-dom";
 
 const Nav = () => {
+	const history = useHistory()
+
 	const [hidden, setHidden] = useState(false)
 	const [lock, setLock] = useState(false)
 
@@ -12,7 +15,10 @@ const Nav = () => {
 		if (lock) return
 		setHidden(false)
 	}
-	const handleFocus = () => setLock(true)
+	const handleFocus = () => {
+		history.push('/search')
+		setLock(true)
+	}
 	const handleBlur = () => {
 		setLock(false)
 		setHidden(false)
@@ -49,12 +55,13 @@ const Nav = () => {
 								initial={{ opacity: 0, width: 0 }}
 								animate={{ opacity: 1, width: 'auto' }}
 								exit={{ opacity: 0, width: 0 }}
+
 							>
 								<input
 									type="text"
 									onBlur={handleBlur}
 									onFocus={handleFocus}
-									placeholder="Search"
+									placeholder="Search this month"
 									className="bg-primary-600 placeholder-primary-900 py-1 px-3 rounded focus:outline-none"
 								/>
 							</motion.div>

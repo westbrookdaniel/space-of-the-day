@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './css/output.css'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { motion } from 'framer-motion'
 
 import AnimatedSwitch from './AnimatedSwitch'
 import Nav from './components/Nav'
 import Home from './pages/Home'
 import About from './pages/About'
 import api from './api'
+import Search from './pages/Search'
 
 /*
 
@@ -35,7 +35,6 @@ function App() {
 
 	useEffect(() => {
 		api.getMonth().then((res) => {
-			console.log(res)
 			setDays(res)
 		})
 	}, [])
@@ -43,11 +42,15 @@ function App() {
 	return (
 		<Router>
 			<div className="font-body text-white">
+				<Nav />
 				<AnimatedSwitch>
 					<Route exact path="/">
 						<Home days={days} />
 					</Route>
 					<Route path="/about" component={About} />
+					<Route path="/search">
+						<Search days={days} />
+					</Route>
 				</AnimatedSwitch>
 			</div>
 		</Router>
