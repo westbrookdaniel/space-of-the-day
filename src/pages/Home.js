@@ -49,7 +49,7 @@ const Home = ({ days }) => {
 				<div className="p-6 py-12 max-w-6xl mx-auto">
 					<div className="mb-3 flex items-center">
 						<h2 className="text-3xl font-bold flex-grow font-body">
-							This Months Images
+							This Month's Images
 						</h2>
 						<p className="font-bold">
 							<PageCounter
