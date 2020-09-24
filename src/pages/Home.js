@@ -2,19 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Pagination from '../components/Pagination'
 import PostsList from '../components/PostsList'
 import PageCounter from '../components/PageCounter'
-import api from '../api'
-import useLocalStorage from '../util/useLocalStorage'
 
-const Home = () => {
+const Home = ({ days }) => {
 	const [loading, setLoading] = useState(true)
 	const [page, setPage] = useState(1)
 	const [content, setContent] = useState([])
-	const [days, setDays] = useState()
 	const [totalPages, setTotalPages] = useState(0)
-
-	useEffect(() => {
-		api.getMonth().then((res) => setDays(res))
-	}, [])
 
 	useEffect(() => {
 		let start = page * 9 - 9
@@ -23,7 +16,6 @@ const Home = () => {
 			if (days.length > 9) {
 				setContent(days.slice(start, start + 9))
 			}
-
 			setTotalPages(Math.ceil(days.length / 9))
 		}
 	}, [days, page])
