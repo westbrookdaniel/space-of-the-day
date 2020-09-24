@@ -10,11 +10,9 @@ const Search = ({ days, query }) => {
 	const [totalPages, setTotalPages] = useState(0)
 
 	useEffect(() => {
-		console.log(query)
 		if (days) {
 			const out = []
 			days.forEach((day) => {
-				console.log(day)
 				if (day.date.includes(query)) {
 					out.push(day)
 				} else if (day.title?.toLowerCase().includes(query?.toLowerCase())) {
