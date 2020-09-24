@@ -10,7 +10,8 @@ const Create = () => {
 			<div className="max-w-lg">
 				<p className="mb-3">
 					This app utilizes the NASA Astronomy of the Day API with React.
-					Styling uses TailwindCSS, with animations done using Framer Motion. Have any questions? Just ask.
+					Styling uses TailwindCSS, with animations done using Framer Motion.
+					Have any questions? Just ask.
 				</p>
 				<motion.a
 					initial={{ opacity: 0 }}
@@ -21,7 +22,7 @@ const Create = () => {
 					rel="noopener noreferrer"
 					href="https://westbrookdaniel.com/"
 				>
-					Made by Daniel Westbrook
+					<p>Made by Daniel Westbrook</p>
 				</motion.a>
 			</div>
 		</div>

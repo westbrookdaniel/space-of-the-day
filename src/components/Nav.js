@@ -30,12 +30,12 @@ const Nav = ({ query, setQuery }) => {
 				<Link
 					to="/about"
 					style={{ gridRow: '2', gridColumn: 'span 2' }}
-					className="text-center block mt-1 text-black font-bold hover:text-black xl:mr-4"
+					className="focus:outline-none text-center block mt-1 text-black font-bold hover:text-black xl:mr-4"
 				>
 					About
 				</Link>
-				<Link to="/" style={{ gridRow: '1', gridColumn: 'span 2' }} className="outline-none">
-					<h1 className="no-select text-center text-5xl xl:text-8xl tracking-tight m-3 pb-1 leading-none font-display text-black outline-none">
+				<Link to="/" style={{ gridRow: '1', gridColumn: 'span 2' }} className="focus:outline-none">
+					<h1 className="no-select text-center text-5xl xl:text-8xl tracking-tight m-3 pb-1 leading-none font-display text-black focus:outline-none">
 						SPACE OF THE DAY
 					</h1>
 				</Link>
