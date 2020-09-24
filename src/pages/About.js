@@ -9,10 +9,9 @@ const Create = () => {
 			</div>
 			<div className="max-w-lg">
 				<p className="mb-3">
-					This React app is made using the JSONPlaceholder API, and uses create,
-					read, update, and delete methods on posts.
+					This app utilizes the NASA Astronomy of the Day API with React.
+					Styling uses TailwindCSS, with animations done using Framer Motion. Have any questions? Just ask.
 				</p>
-				<p className="mb-6">Styling is done using TailwindCSS.</p>
 				<motion.a
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
