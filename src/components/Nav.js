@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { GrFormSearch } from 'react-icons/gr'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom'
 
-const Nav = () => {
+const Nav = ({ query, setQuery }) => {
 	const history = useHistory()
 
 	const [hidden, setHidden] = useState(false)
@@ -50,15 +50,16 @@ const Nav = () => {
 							<motion.div
 								key={0}
 								transition={{
-									ease: 'easeOut'
+									ease: 'easeOut',
 								}}
 								initial={{ opacity: 0, width: 0 }}
 								animate={{ opacity: 1, width: 'auto' }}
 								exit={{ opacity: 0, width: 0 }}
-
 							>
 								<input
 									type="text"
+									value={query}
+									onChange={(e) => setQuery(e.target.value)}
 									onBlur={handleBlur}
 									onFocus={handleFocus}
 									placeholder="Search this month"

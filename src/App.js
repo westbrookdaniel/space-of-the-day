@@ -32,6 +32,7 @@ Only Read, as CRUD will be illsutrated in IPD Project
 
 function App() {
 	const [days, setDays] = useState()
+	const [query, setQuery] = useState('')
 
 	useEffect(() => {
 		api.getMonth().then((res) => {
@@ -42,14 +43,14 @@ function App() {
 	return (
 		<Router>
 			<div className="font-body text-white">
-				<Nav />
+				<Nav query={query} setQuery={setQuery} />
 				<AnimatedSwitch>
 					<Route exact path="/">
 						<Home days={days} />
 					</Route>
 					<Route path="/about" component={About} />
 					<Route path="/search">
-						<Search days={days} />
+						<Search days={days} query={query} />
 					</Route>
 				</AnimatedSwitch>
 			</div>
