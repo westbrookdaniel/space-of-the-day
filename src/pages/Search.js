@@ -15,7 +15,13 @@ const Search = ({ days, query }) => {
 			const out = []
 			days.forEach((day) => {
 				console.log(day)
-				if (day.title.toLowerCase().includes(query.toLowerCase())) {
+				if (day.date.includes(query)) {
+					out.push(day)
+				} else if (day.title?.toLowerCase().includes(query?.toLowerCase())) {
+					out.push(day)
+				} else if (
+					day.copyright?.toLowerCase().includes(query?.toLowerCase())
+				) {
 					out.push(day)
 				}
 			})
