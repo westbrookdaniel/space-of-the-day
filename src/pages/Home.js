@@ -22,10 +22,7 @@ const Home = ({ days }) => {
 
 	return (
 		<div>
-			<div
-				className={`h-screen bg-cover`}
-				// style={{ backgroundImage: `url("${days ? days[0]?.url : null}")` }}
-			>
+			<div className={`h-screen bg-cover`}>
 				<img
 					className={`${
 						loading ? 'opacity-0 absolute' : 'opacity-1'
@@ -33,11 +30,11 @@ const Home = ({ days }) => {
 					onLoad={() => {
 						setLoading(false)
 					}}
-					src={days && days[0]?.url}
+					src={days && days[0]?.hdurl}
 					alt={days ? days[0]?.title : 'Loading'}
 				/>
 
-				{!days && loading ? (
+				{loading ? (
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 20 20"
