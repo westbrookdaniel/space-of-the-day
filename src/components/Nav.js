@@ -19,7 +19,7 @@ const Nav = () => {
 	}
 
 	return (
-		<header className="absolute w-full z-50 bg-primary-500">
+		<header className="fixed w-full z-50 bg-primary-500">
 			<nav className="grid xl:flex grid-cols-2 items-center justify-between px-12 m-auto flex-wrap pb-4 xl:pb-0">
 				<Link
 					to="/about"
