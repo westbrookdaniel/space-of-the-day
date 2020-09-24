@@ -24,10 +24,9 @@ const Single = (props) => {
 						src={day.hdurl}
 						alt={day.title}
 					/>
-                    <h2 className="text-2xl">{day.title}</h2>
-                    <p>{day.date}</p>
-                    <Buttons day={day} details={false} className="mt-8" />
-                    {console.log(day)}
+					<h2 className="text-2xl">{day.title}</h2>
+					<p>{day.date}</p>
+					<Buttons day={day} details={false} className="mt-8" />
 				</div>
 			) : (
 				<svg
