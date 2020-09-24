@@ -19,11 +19,11 @@ const Nav = () => {
 	}
 
 	return (
-		<header className="fixed w-full z-50 bg-primary-500">
+		<header className="absolute xl:fixed w-full z-50 bg-primary-500">
 			<nav className="grid xl:flex grid-cols-2 items-center justify-between px-12 m-auto flex-wrap pb-4 xl:pb-0">
 				<Link
 					to="/about"
-					style={{ gridRow: '2' }}
+					style={{ gridRow: '2', gridColumn: 'span 2' }}
 					className="text-center block mt-1 text-black font-bold hover:text-black xl:mr-4"
 				>
 					About
@@ -34,8 +34,7 @@ const Nav = () => {
 					</h1>
 				</Link>
 				<div
-					style={{ gridRow: '2' }}
-					className="cursor-pointer flex justify-center mt-1 text-black hover:text-black xl:mr-4"
+					className="cursor-pointer hidden xl:flex justify-center mt-1 text-black hover:text-black xl:mr-4"
 					onMouseEnter={handleExpand}
 					onMouseLeave={handleCollapse}
 				>
