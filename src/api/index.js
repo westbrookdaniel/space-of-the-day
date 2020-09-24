@@ -1,5 +1,3 @@
-import { tempapi } from '../tempapi'
-
 const key = process.env.REACT_APP_API_KEY
 const date = new Date()
 
