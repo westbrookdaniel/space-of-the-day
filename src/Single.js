@@ -15,9 +15,9 @@ const Single = (props) => {
 			{day ? (
 				<div className="h-full relative p-8 flex flex-col justify-center items-center">
 					<img
-						className={`h-64 ${
+						className={`${
 							loading ? 'opacity-0' : null
-						} transition-opacity ease-in-out duration-200 mb-16 flex-grow w-auto`}
+						} transition-opacity ease-in-out duration-200 mb-16 xl:flex-grow w-full md:w-auto`}
 						onLoad={() => {
 							setLoading(false)
 						}}
