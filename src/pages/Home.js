@@ -22,7 +22,7 @@ const Home = ({ days }) => {
 
 	return (
 		<div>
-			<div className={`h-screen bg-cover`}>
+			<div className="h-screen">
 				<img
 					className={`${
 						loading ? 'opacity-0 absolute' : 'opacity-1'

@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import api from './api'
 import Search from './pages/Search'
+import Single from './Single'
 
 /*
 
@@ -52,6 +53,7 @@ function App() {
 					<Route path="/search">
 						<Search days={days} query={query} />
 					</Route>
+					<Route path="/day/:date" component={Single} />
 				</AnimatedSwitch>
 			</div>
 		</Router>
