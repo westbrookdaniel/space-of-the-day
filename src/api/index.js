@@ -1,5 +1,6 @@
 const key = process.env.REACT_APP_API_KEY
-const date = new Date()
+const date = new Date('October 17, 2020 03:24:00')
+// const date = new Date()
 
 class apiClass {
 	constructor() {
@@ -15,7 +16,7 @@ class apiClass {
 				const data = await fetch(
 					`https://api.nasa.gov/planetary/apod?api_key=${key}&start_date=${date.getFullYear()}-${
 						month - 1
-					}-${date.getDate()}`
+					}-${date.getDate()}&end_date=${date.getFullYear()}-${month}-${date.getDate()}`
 				)
 				const json = await data.json()
 				json.forEach((item) => {
@@ -33,7 +34,7 @@ class apiClass {
 		}
 	}
 	getDay = async (date) => {
-		console.log(date);
+		console.log(date)
 		try {
 			if (this.savedMonth) {
 				return this.savedMonth.find((day) => day.date === date)

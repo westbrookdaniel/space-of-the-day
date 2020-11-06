@@ -51,7 +51,7 @@ const Home = ({ days }) => {
 						<h2 className="text-3xl font-bold flex-grow font-body">
 							This Month's Images
 						</h2>
-						<p className="font-bold">
+						<p className="font-bold hidden lg:block">
 							<PageCounter
 								page={page}
 								setPage={setPage}
