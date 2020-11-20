@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
-import api from './api'
-import Buttons from './components/Buttons'
+import api from '../api'
+import Buttons from '../components/Buttons'
 
 const Single = (props) => {
 	const [day, setDay] = useState()

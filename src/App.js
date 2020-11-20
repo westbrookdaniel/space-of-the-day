@@ -8,7 +8,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import api from './api'
 import Search from './pages/Search'
-import Single from './Single'
+import Single from './pages/Single'
 
 /*
 
