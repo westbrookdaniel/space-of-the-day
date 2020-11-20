@@ -1,6 +1,5 @@
 const key = process.env.REACT_APP_API_KEY
-const date = new Date('October 17, 2020 03:24:00')
-// const date = new Date()
+const date = new Date()
 
 class apiClass {
 	constructor() {
@@ -34,7 +33,6 @@ class apiClass {
 		}
 	}
 	getDay = async (date) => {
-		console.log(date)
 		try {
 			if (this.savedMonth) {
 				return this.savedMonth.find((day) => day.date === date)
