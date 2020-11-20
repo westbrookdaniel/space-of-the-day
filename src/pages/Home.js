@@ -8,6 +8,7 @@ const Home = ({ days }) => {
 	const [page, setPage] = useState(1)
 	const [content, setContent] = useState([])
 	const [totalPages, setTotalPages] = useState(0)
+	const [currentSrc, setCurrentSrc] = useState(null)
 
 	useEffect(() => {
 		let start = page * 9 - 9
@@ -20,6 +21,24 @@ const Home = ({ days }) => {
 		}
 	}, [days, page])
 
+	useEffect(() => {
+		if (Array.isArray(days)) {
+			setCurrentSrc(days[0]?.url)
+		}
+	}, [days])
+
+	const loadHighRes = () => {
+		console.log('start')
+		if (Array.isArray(days)) {
+			const img = new Image()
+			img.addEventListener('load', () => {
+				console.log('loaded')
+				setCurrentSrc(img.src)
+			})
+			img.src = days[0]?.hdurl
+		}
+	}
+
 	return (
 		<div>
 			<div className="h-screen">
@@ -29,20 +48,24 @@ const Home = ({ days }) => {
 					} transition-opacity ease-in-out duration-200 w-full h-full object-cover`}
 					onLoad={() => {
 						setLoading(false)
+						loadHighRes()
 					}}
-					src={days && days[0]?.hdurl}
+					src={days && currentSrc}
 					alt={days ? days[0]?.title : 'Loading'}
 				/>
 
 				{loading ? (
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 20 20"
-						fill="currentColor"
-						className="animate-spin w-10 m-auto h-screen"
-					>
-						<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-					</svg>
+					<div class="flex justify-center flex-col space-y-8 items-center h-screen">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							className="animate-spin w-10"
+						>
+							<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+						</svg>
+						<p>Loading Image</p>
+					</div>
 				) : null}
 			</div>
 			{days ? (
