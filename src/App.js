@@ -9,7 +9,7 @@ import About from './pages/About'
 import api from './api'
 import Search from './pages/Search'
 import Single from './pages/Single'
-import Error from './pages/404s'
+import Error from './pages/404'
 
 function App() {
 	const [days, setDays] = useState()
