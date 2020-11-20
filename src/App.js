@@ -9,27 +9,7 @@ import About from './pages/About'
 import api from './api'
 import Search from './pages/Search'
 import Single from './pages/Single'
-
-/*
-
-More appealing
-Astronomy Picture of the Day
-----
-Shows all legacy pictures in gallery with thumbnails
-Download Links too
-https://apod.nasa.gov/apod/astropix.html
-Endpoint Examples: 
-https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2020-08-17
-https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&count=10
-----
-TODO: Write About Page
-TODO: Support Videos
-TODO: Add a details page for explination and larger image
-TODO: Add Search (at least by date)
-----
-Only Read, as CRUD will be illsutrated in IPD Project
-
-*/
+import Error from './pages/404s'
 
 function App() {
 	const [days, setDays] = useState()
@@ -54,6 +34,7 @@ function App() {
 						<Search days={days} query={query} />
 					</Route>
 					<Route path="/day/:date" component={Single} />
+					<Route component={Error} />
 				</AnimatedSwitch>
 			</div>
 		</Router>
