@@ -21,6 +21,7 @@
     "prebuild": "NODE_ENV=production npm run build:css",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "npm run build && netlify deploy --prod",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

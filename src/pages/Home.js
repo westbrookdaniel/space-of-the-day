@@ -9,7 +9,14 @@ const Home = ({ days }) => {
 	const [page, setPage] = useState(1)
 	const [content, setContent] = useState([])
 	const [totalPages, setTotalPages] = useState(0)
-	const { loadHighRes, src } = useHighRes(days[0])
+	const [heroDay, setHeroDay] = useState(null)
+	const { loadHighRes, src } = useHighRes(heroDay)
+
+	useEffect(() => {
+		if (Array.isArray(days)) {
+			setHeroDay(days[0])
+		}
+	}, [days])
 
 	useEffect(() => {
 		let start = page * 9 - 9
