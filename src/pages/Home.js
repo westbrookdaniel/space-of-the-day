@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react'
 import Pagination from '../components/Pagination'
 import PostsList from '../components/PostsList'
 import PageCounter from '../components/PageCounter'
+import useHighRes from '../util/useHighRes'
 
 const Home = ({ days }) => {
 	const [loading, setLoading] = useState(true)
 	const [page, setPage] = useState(1)
 	const [content, setContent] = useState([])
 	const [totalPages, setTotalPages] = useState(0)
-	const [currentSrc, setCurrentSrc] = useState(null)
+	const { loadHighRes, src } = useHighRes(days[0])
 
 	useEffect(() => {
 		let start = page * 9 - 9
@@ -21,24 +22,6 @@ const Home = ({ days }) => {
 		}
 	}, [days, page])
 
-	useEffect(() => {
-		if (Array.isArray(days)) {
-			setCurrentSrc(days[0]?.url)
-		}
-	}, [days])
-
-	const loadHighRes = () => {
-		console.log('start')
-		if (Array.isArray(days)) {
-			const img = new Image()
-			img.addEventListener('load', () => {
-				console.log('loaded')
-				setCurrentSrc(img.src)
-			})
-			img.src = days[0]?.hdurl
-		}
-	}
-
 	return (
 		<div>
 			<div className="h-screen">
@@ -50,7 +33,7 @@ const Home = ({ days }) => {
 						setLoading(false)
 						loadHighRes()
 					}}
-					src={days && currentSrc}
+					src={days && src}
 					alt={days ? days[0]?.title : 'Loading'}
 				/>
 
