@@ -35,7 +35,7 @@ const Nav = ({ query, setQuery }) => {
 					About
 				</Link>
 				<Link to="/" style={{ gridRow: '1', gridColumn: 'span 2' }} className="focus:outline-none">
-					<h1 className="no-select text-center text-5xl xl:text-8xl tracking-tight m-3 pb-1 leading-none font-display text-black focus:outline-none">
+					<h1 className="no-select text-center text-3xl md:text-5xl xl:text-8xl tracking-tight m-3 pb-1 leading-none font-display text-black focus:outline-none">
 						SPACE OF THE DAY
 					</h1>
 				</Link>

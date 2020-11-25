@@ -14,7 +14,7 @@ const Single = (props) => {
 	}, [props.match.params.date])
 
 	return (
-		<div className="h-screen pt-40 overflow-hidden">
+		<div className="h-screen pt-40">
 			<AnimatePresence>
 				{day && (
 					<motion.div
@@ -22,12 +22,13 @@ const Single = (props) => {
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
-						className="h-full relative p-8 flex flex-col justify-center items-center"
+						className="min-h-full relative p-8 flex flex-col justify-center items-center"
 					>
 						<img
 							className={`${
 								loading ? 'opacity-0' : null
 							} transition-opacity ease-in-out duration-200 mb-16 xl:flex-grow w-full md:w-auto`}
+							style={{ maxHeight: '80vh' }}
 							onLoad={() => {
 								setLoading(false)
 								loadHighRes()
