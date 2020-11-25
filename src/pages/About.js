@@ -13,7 +13,17 @@ const Create = () => {
 					Styling uses TailwindCSS, with animations done using Framer Motion.
 					Have any questions? Just ask.
 				</p>
-				<p>For Copyright Information See <a href="https://apod.nasa.gov" target="_blank" rel="noopener noreferrer">https://apod.nasa.gov</a></p>
+				<p className="mb-3">
+					For Copyright Information See:{' '}
+					<a
+						className="hover:underline"
+						href="https://apod.nasa.gov"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						https://apod.nasa.gov
+					</a>
+				</p>
 				<motion.a
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
